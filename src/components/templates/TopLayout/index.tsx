@@ -1,11 +1,13 @@
-import ColorButton from "../../atoms/ColorButton";
-import SeeMoreLink from "../../atoms/SeeMoreLink";
+import { FC } from "react";
+import RegularInput from "../../atoms/RegularInput";
+import HumanIcon from "../../../icons/HumanIcon";
 
-const TopLayout = () => {
+const TopLayout: FC = () => {
   return (
     <>
       <p>コンポーネント製作中</p>
-      <SeeMoreLink to={"/"} />
+      <RegularInput />
+      <RegularInput icon={<HumanIcon color="blue"/>}/>
     </>
   );
 };

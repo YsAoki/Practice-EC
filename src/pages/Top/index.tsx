@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import TopLayout from "../../templates/TopLayout";
+import TopLayout from "../../components/templates/TopLayout";
 
 const Top: FC = () => {
   return <TopLayout />;
