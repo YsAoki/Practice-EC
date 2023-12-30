@@ -1,7 +1,7 @@
 import "reset-css";
 import "./style.css";
 import { FC } from "react";
-import ReactRouter from "./components/pages/ReactRouter";
+import ReactRouter from "./pages/ReactRouter";
 
 const App: FC = () => {
   return (

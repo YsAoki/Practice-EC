@@ -1,14 +1,13 @@
-import { IconColor } from "../types/types"
+import { IconColor } from "../types/types";
 
 // iconの色を管理する
-export const convertColorCodeForSVG = (propsColor: IconColor) => {
-  if(propsColor === "white") {
-    return "#fff"
+export const convertColorCode = (propsColor: IconColor) => {
+  switch (propsColor) {
+    case "white":
+      return "#fff";
+    case "blue":
+      return "#1D7DDD";
+    case "black":
+      return "#404040";
   }
-  if(propsColor === "blue") {
-    return "#1D7DDD"
-  } 
-  if(propsColor === "black") {
-    return "#404040"
-  }
-}
+};
