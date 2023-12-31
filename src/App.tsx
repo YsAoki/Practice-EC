@@ -1,5 +1,3 @@
-import "reset-css";
-import "./style.css";
 import { FC } from "react";
 import ReactRouter from "./pages/ReactRouter";
 
