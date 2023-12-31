@@ -19,7 +19,6 @@ libs
 共通して使用されるコードや機能を格納する場所。
 axios.createを使用するとリクエスト全ての頭にbaseURLが付与される。
 
-
 theme
 マテリアルデザインベースで考えていた場合に、xs xlなどが汎用性高くなるので、慣れておくと今後も便利そう。
 
@@ -35,6 +34,28 @@ TypeScript プロジェクト内で共有される型定義を集中管理する
 cssについて
 グローバルスタイルを使うのか
 reset-cssとstyle.cssを使うのかはプロジェクト次第なので、どちらがより良い正解とは限らない。
+
+reset-cssの記入箇所はmain.tsxの中で、Appではないらしい。
+
+PropsにおけるshouldForwordPropsについて。
+書き方が若干難しいので、tag内のkeyに対して$をつけてあげる事で解消することができる。
+サンプルコード
+style.ts側
+export const SOverLay = styled.div <{$open: boolean}>`  
+  display: ${({$open}) => $open? "block" : "none"};
+index.tsx側
+  return <SOverLay $open={open} {...other} />;
+そもそもshouldForwordがなんで出てくるのか？
+スタイルに影響を与えるプロパティ（例えば、active、variant、sizeなど）を使用するときに、
+styled-componentsに渡すが、このプロパティをHTMLタグ内に渡してしまうと、予期せぬものとしてエラーが出力される。
+（不必要なプロパティをDOMに渡してしまうと、パフォーマンスやメモリ使用に影響を与えるため）
+HTMLには渡さずにstyled-componentsに渡すために、shouldを使う。
+ただし、プロパティに$を使用する事で、shouldForwordPropを避けることができる。　styled-components v5で導入された新機能。
+
+
+
+
+
 
 wrapper、Box、containerの使い分け
 大枠はcontainer、（1回しか使わない）
