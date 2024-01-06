@@ -1,9 +1,12 @@
 import { FC } from "react";
+import Form from "../../organismus/Form";
 
 const TopLayout: FC = () => {
   return (
     <>
-      <p>コンポーネント製作中</p>
+    <Form>
+      
+    </Form>
     </>
   );
 };

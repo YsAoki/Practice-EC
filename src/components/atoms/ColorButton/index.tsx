@@ -6,6 +6,7 @@ import { buttonStyles } from "../../../config/buttonStyle";
 type Props = {
   icon?: React.ReactNode;
 };
+
 type RegularButtonMyProps = React.ComponentPropsWithoutRef<"button">;
 
 const ColorButton: FC<
